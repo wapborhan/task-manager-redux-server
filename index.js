@@ -56,7 +56,7 @@ async function run() {
 
       try {
         const result = await tasksCollection.deleteOne({
-          _id: ObjectId(taskId),
+          _id: new ObjectId(taskId),
         });
         if (result.deletedCount === 0) {
           res.status(404).json({ error: "Task not found" });
